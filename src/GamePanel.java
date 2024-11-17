@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class GamePanel extends JPanel {
     // SCREEN SETTINGS
@@ -8,6 +9,13 @@ public class GamePanel extends JPanel {
     private final int tileSize = originalTileSize * scale;
     private final int maxScreenCol = 16;
     private final int maxScreenRow = 12;
-    private final int screenWidth = tileSize * maxScreenCol;
+    private final int screenWidth = tileSize * maxScreenCol; // 768px
+    private final int screenHeight = tileSize * maxScreenRow; // 576px
+
+    public GamePanel() {
+        this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+        this.setBackground(Color.black);
+        this.setDoubleBuffered(true);
+    }
 
 }
